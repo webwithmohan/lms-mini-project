@@ -1,0 +1,61 @@
+
+@import url("variable.css");
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+ }
+ .container{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/images/library-image.jfif);
+    
+ }
+ .layout{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    background: linear-gradient(to right, rgba(0,0,0,0.90) 0%,rgba(0,0,0,0.85) 25%,rgba(0,0,0,0.70) 50%,rgba(0,0,0,0.50) 75%,rgba(0,0,0,0.30) 100%);
+   
+
+ }
+ .content{
+    width: 50%;
+    color: white;
+    margin: 10% 10%;
+ }
+ .content span{
+    color: var(--main-color);
+ }
+ .content .get{
+    display: flex;
+    background-color: var(--main-color);
+    color: white;
+    padding: 5px 10px;
+    position: relative;
+    top: 20px;
+    width: 200px;
+    height: 40px;
+   justify-content: center;
+   align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+    justify-content: space-around;
+    transition: var(--ts-);
+
+    
+ }
+  .content .get:hover{
+    transform: translateY(var(--tf-));
+    cursor: pointer;
+    
+    
+
+  }
+  .content .get a{
+    text-decoration: none;
+    color: white;
+  }

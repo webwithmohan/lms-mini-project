@@ -1,0 +1,25 @@
+html{
+    font-family: var(--main-font);
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    
+}table th,td{
+    padding: 30px 20px;
+}
+table thead{
+    background-color: var(--main-color);
+    color: white;
+}
+::-webkit-scrollbar{
+    width: 10px;
+
+}
+::-webkit-scrollbar-track{
+    background: white;
+}
+::-webkit-scrollbar-thumb{
+    background:var(--main-color);
+    border-radius: 10px;
+}

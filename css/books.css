@@ -1,0 +1,20 @@
+main{
+   
+    
+}
+.books{
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+    flex-wrap: wrap;
+    
+}
+.books div{
+    height: 300px;
+    min-width: 20%;
+    flex-grow: 1;
+    
+    background-color: aquamarine;
+    
+    
+}
