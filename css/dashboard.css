@@ -35,6 +35,7 @@ nav{
     font-family: var(--main-font);
     
     
+    
  }
  main{
     margin-left: 220px;
@@ -186,6 +187,32 @@ main p{
     align-items: center;
     padding: 10px;
     border-radius: 12px;
+}
+
+/* Recent Search Container */
+.recent-issues table{
+    width: 100%;
+    background-color: #eceff2;
+    padding: 10px;
+    border-radius: 8px;
+
+
+    
+  
+}
+.recent-issues table td,th{
+    padding: 10px;
+    text-align: center;
+    border-bottom: 5px solid white;
+
+}
+#status-text{
+    border:1px solid #105f26;
+    color: #105f26;
+    background-color: #80df9b;
+    
+    border-radius: 8px;
+
 }
 @media(max-width:1000px){
     .cards{

@@ -1,20 +1,92 @@
-main{
-   
-    
+main {
 }
-.books{
-    display: flex;
-    gap: 10px;
-    margin: 10px;
-    flex-wrap: wrap;
-    
+.books {
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+  flex-wrap: wrap;
 }
-.books div{
-    height: 300px;
-    min-width: 20%;
-    flex-grow: 1;
-    
-    background-color: aquamarine;
-    
-    
+.category-link {
+  display: flex;
+  flex-wrap: wrap;
+}
+.category-link li {
+  list-style: none;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 12px;
+  margin: 0px 10px;
+  background-color: rgb(244, 241, 239);
+  width: max-content;
+  margin: 5px;
+  cursor: pointer;
+}
+.category-link .active {
+  background-color: var(--main-color);
+  color: white !important;
+}
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.book {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  flex-grow: 1;
+  padding: 5px;
+}
+.book img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+}
+
+/* addBook Popup */
+.overlay {
+  
+  justify-content: center;
+  align-items: center;
+  display: none;
+  
+}
+
+.popup{
+    width: 50%;
+    height: auto;
+    padding: 30px 10px;
+    border-radius: 10px;
+
+}
+.popup label{
+    display: block;
+}
+.popup input{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border: 1px solid gray;
+
+}
+.popup input:focus{
+    outline: 2px solid var(--main-color);
+}
+
+.btn-group button{
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    margin: 10px 0px;
+
+}
+.cancel-btn{
+    background-color: rgb(209, 72, 72);
+    color: white;
+}
+.save-btn{
+    background-color: var(--main-color);
+    color: white;
 }
