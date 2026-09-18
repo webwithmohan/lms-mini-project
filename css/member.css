@@ -23,3 +23,20 @@ table thead{
     background:var(--main-color);
     border-radius: 10px;
 }
+.editBtn,.deleteBtn{
+    width: 100%;
+    padding: 5px 10px;
+    margin: 5px 0px;
+    border: none;
+    outline: line;
+}
+.editBtn{
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 8px;
+}
+.deleteBtn{
+    background-color:red;
+    color: white;
+    border-radius: 8px;
+}

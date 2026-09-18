@@ -29,29 +29,27 @@
             <div class="popup" style="background-color: white;">
                 <h1 style="text-align: center;color: var(--main-color);">Add Book</h1>
                 <div class="input-group">
-                    <input type="text">
+                    <input type="text" id="bookId" readonly>
                 </div>
                 <div class="input-group">
                     <label for="">Title</label>
-                    <input type="text">
+                    <input type="text" id="bookTitle">
                 </div>
                 <div class="input-group">
-                    <label for="">Auther</label>
-                    <input type="text">
+                    <label for="">Author</label>
+                    <input type="text" id="bookAuthor">
                 </div>
                 <div class="input-group">
                     <label for="">Category</label>
-                    <input type="text">
+                    <input type="text" id="bookCategory">
                 </div>
                 <div class="input-group">
                     <label for="">Image Url</label>
-                    <input type="text">
+                    <input type="text" id="bookImageUrl">
                 </div>
                 <div class="btn-group">
-                    <button class="cancel-btn" onclick="() => {
-                        
-                    }">Cancel</button>
-                    <button class="save-btn">Save</button>
+                    <button class="cancel-btn" onclick="closePopup()">Cancel</button>
+                    <button class="save-btn" onclick="addBook()">Save</button>
                 </div>
                 
             </div>

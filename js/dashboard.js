@@ -127,3 +127,6 @@ document.addEventListener("sidebarloaded", () => {
     
 
 })
+let b=JSON.parse(localStorage.getItem("books"))
+let totalBooksCount=document.getElementById('totalBooks')
+totalBooksCount.textContent=b.length

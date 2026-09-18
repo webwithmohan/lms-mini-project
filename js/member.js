@@ -5,7 +5,7 @@ function loadMembersData() {
   let totalUsers = document.getElementById("total-users");
   totalUsers.textContent = `Total Users : ${members.length}`;
   for (let i = 0; i < members.length; i++) {
-    main.innerHTML += `<tr><td>${members[i].username}</td><td>${members[i].email}</td><td>${members[i].address}</td><td>${members[i].phone}</td><td><button>Edit</button><button data-email="${members[i].email}" onclick="deleteUser(this)">Delete</button></td></tr>`;
+    main.innerHTML += `<tr><td>${members[i].username}</td><td>${members[i].email}</td><td>${members[i].address}</td><td>${members[i].phone}</td><td><button class="editBtn">Edit</button><button data-email="${members[i].email}" onclick="deleteUser(this)" class="deleteBtn">Delete</button></td></tr>`;
   }
 }
 
