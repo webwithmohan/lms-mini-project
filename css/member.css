@@ -36,7 +36,7 @@ table thead{
     border-radius: 8px;
 }
 .deleteBtn{
-    background-color:red;
+    background-color:rgb(216, 44, 44);
     color: white;
     border-radius: 8px;
 }

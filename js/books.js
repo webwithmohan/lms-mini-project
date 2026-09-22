@@ -351,28 +351,39 @@
 //   },
 // ];
 // localStorage.setItem("books", JSON.stringify(book));
-let books = JSON.parse(localStorage.getItem("books"));
+let books = JSON.parse(localStorage.getItem("books")) || [];
 
 
 const link = document.querySelector(".category-link");
 
 //get Uniq Category Item
-const categorySet = new Set();
-books.forEach((book) => {
-  categorySet.add(book.category);
-});
-let categories = [...categorySet];
-console.log(categories);
 
-categories.forEach((book) => {
-  link.innerHTML += `<li data-category="${book}">${book}</li>`;
-});
+  const categorySet = new Set();
+  books.forEach((book) => {
+    categorySet.add(book.category);
+  });
+  let categories = [...categorySet];
+  console.log(categories);
+
+  categories.forEach((book) => {
+    link.innerHTML += `<li data-category="${book}">${book}</li>`;
+  });
+
 
 //render all books;
 
 let bookContainer = document.querySelector(".book-container");
 books.forEach((book) => {
-  bookContainer.innerHTML += `<div class="book"><img src="${book.imageUrl}"></img><p>Title :${book.title}</p><p>Author:${book.author}</p><p>Category:${book.category}</p></div>`;
+  bookContainer.innerHTML += `<div class="book">
+  <img src="${book.imageUrl}"></img>
+  <p>Title :${book.title}</p>
+  <p>Author:${book.author}</p>
+  <p>Category:${book.category}</p>
+  <div style="display:flex;justify-content:end; margin-top:20px;gap:5px;">
+  <button class="edit-btn" style="padding:5px 10px;background-color:var(--main-color); color:white;border:none;outline:none">Edit</button>
+  <button class="delete-btn" style="padding:5px 10px;background-color:rgb(216, 44, 44); color:white;border:none;outline:none" onClick="deleteBook(${book.id})">Delete</button>
+  </div>
+  </div>`;
 });
 
 //display Books
@@ -388,12 +399,28 @@ function displayBooks(cat) {
     bookContainer.innerHTML = "";
 
     filteredBooks.map((book) => {
-      bookContainer.innerHTML += `<div class="book"><img src="${book.imageUrl}"></img><p>Title :${book.title}</p><p>Author:${book.author}</p><p>Category:${book.category}</p></div>`;
+      bookContainer.innerHTML += `<div class="book">
+      <img src="${book.imageUrl}"></img>
+      <p>Title :${book.title}</p>
+      <p>Author:${book.author}</p>
+      <p>Category:${book.category}</p>
+       <div style="display:flex;justify-content:end; margin-top:20px;gap:5px;">
+  <button class="edit-btn" style="padding:5px 10px;background-color:var(--main-color); color:white;border:none;outline:none">Edit</button>
+  <button class="delete-btn" style="padding:5px 10px;background-color:rgb(216, 44, 44); color:white;border:none;outline:none" onClick="deleteBook(${book.id})">Delete</button>
+      </div>`;
     });
   } else {
     bookContainer.innerHTML = "";
     books.map((book) => {
-      bookContainer.innerHTML += `<div class="book"><img src="${book.imageUrl}"></img><p>Title :${book.title}</p><p>Author:${book.author}</p><p>Category:${book.category}</p></div>`;
+      bookContainer.innerHTML += `<div class="book">
+      <img src="${book.imageUrl}"></img>
+      <p>Title :${book.title}</p>
+      <p>Author:${book.author}</p>
+      <p>Category:${book.category}</p>
+       <div style="display:flex;justify-content:end; margin-top:20px;gap:5px;">
+  <button class="edit-btn" style="padding:5px 10px;background-color:var(--main-color); color:white;border:none;outline:none">Edit</button>
+  <button class="delete-btn" style="padding:5px 10px;background-color:rgb(216, 44, 44); color:white;border:none;outline:none" onClick="deleteBook(${book.id})">Delete</button>
+      </div>`;
     });
   }
 }
@@ -509,9 +536,26 @@ function addBook() {
     alert("Successfully Added Book");
     let overlay = document.querySelector(".overlay");
     overlay.style.display = "none";
-
+    loadLink();
     displayBooks("all");
+
   } else {
     alert("Required All Fields");
   }
 }
+
+//delete Book
+
+function deleteBook(id) {
+  let filterBook = books.filter((book) => Number(book.id) !== Number(id))
+  console.log(filterBook);
+
+  localStorage.setItem("books", JSON.stringify(filterBook))
+
+  displayBooks("all")
+ 
+
+
+}
+
+
