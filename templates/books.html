@@ -1,51 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Books</title>
-    <link rel="stylesheet" href="../css/dashboard.css">
-    <link rel="stylesheet" href="../css/variable.css">
-    <link rel="stylesheet" href="../css/books.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/variable.css" />
+    <link rel="stylesheet" href="../css/books.css" />
+  </head>
+  <body>
     <aside></aside>
 
     <!--Main Content-->
     <main>
-        <div class="container">
-            <h1>Books</h1>
-            <div class="category-link">
-                <li class="active" data-category="all">All</li>
-               
-            </div>
-            <div class="book-container">
-                
-            </div>
-            
+      <div class="container">
+        <h1>Books</h1>
+        <div class="category-link">
+          <li class="active" data-category="all">All</li>
         </div>
-        <button style="position: absolute; top: 20px; right: 30px;padding:  10px 10px; border-radius: 12px; border: none; outline: none;background-color: var(--main-color); color: white;font-size:15px;" onclick="openBookPopup()"> + Add Book</button>
+        <div class="book-container" style="background-color: rgb(228, 228, 228);padding: 10px;">
+          <table style="width: 100%;">
+            <thead><tr><td>Book Id</td><td>Book Name & Details</td><td>Author</td><td>Category</td><td>Quantity</td><td>Action</td></tr></thead>
+            <tbody style="padding-top: 20px;">
+              
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+      <button style="position: absolute; top: 20px; right: 30px;padding:  10px 10px; border-radius: 12px; border: none; outline: none;background-color: var(--main-color); color: white;font-size:15px;" onclick="openBookPopup()"> + Add Book</button>
         <div class="overlay" style="width: 100%; height: 100%; background-color: rgba(0, 0, 0,0.80);position: absolute;left: 0; top: 0;">
             <div class="popup" style="background-color: white;">
                 <h1 style="text-align: center;color: var(--main-color);">Add Book</h1>
                 <div class="input-group">
+                  <label for="">Book ID <span style="color: red;">*</span></label>
                     <input type="text" id="bookId" readonly>
                 </div>
                 <div class="input-group">
-                    <label for="">Title</label>
-                    <input type="text" id="bookTitle">
+                    <label for="">Book Title</label>
+                    <input type="text" id="bookTitle" placeholder="e.g Python">
                 </div>
                 <div class="input-group">
-                    <label for="">Author</label>
-                    <input type="text" id="bookAuthor">
+                    <label for="">Book Author</label>
+                    <input type="text" id="bookAuthor" placeholder="e.g Remo">
                 </div>
-                <div class="input-group">
-                    <label for="">Category</label>
-                    <input type="text" id="bookCategory">
+                <div class="input-group" style="display: flex; gap: 20px;">
+                  <div style="width: 100%;">
+                     <label for="">Book Category</label>
+                    <select name="" id="bookCategory" style="width: 100%;height: 40px;">
+                       
+                    </select>
+                  </div>
+                   <div style="width: 100%;">
+                     <label for="">Book Quantity</label>
+                    <input type="text" placeholder="e.g 2" id="bookQuantity" style="width: 100%;">
+                       
+                  
+                  </div>
+                  <div>
+
+                  </div>
+                   
                 </div>
-                <div class="input-group">
-                    <label for="">Image Url</label>
-                    <input type="text" id="bookImageUrl">
+                <div class="input-group" style="display: flex;gap: 20px; justify-content: space-between;">
+                  <div style="width: 100%;">
+                    <label for="">Publisher</label>
+                    <input type="text" name="" id="bookPublisher" placeholder="e.g Martin">
+                  </div>
+                   <div style="width: 100%;">
+                    <label for="">Year</label>
+                    <input type="text" name="" id="bookYear" placeholder="e.g 1965">
+                  </div>
                 </div>
                 <div class="btn-group">
                     <button class="cancel-btn" onclick="closePopup()">Cancel</button>
@@ -55,10 +80,72 @@
             </div>
 
         </div>
+
+        <!-- edit overlay -->
+         <div class="editOverlay" style="width: 100%; height: 100%; background-color: rgba(0, 0, 0,0.80);position: absolute;left: 0; top: 0;">
+            <div class="popup" style="background-color: white;">
+                <h1 style="text-align: center;color: var(--main-color);">Edit Book</h1>
+                <div class="input-group">
+                  <label for="">Book ID <span style="color: red;">*</span></label>
+                    <input type="text" id="editBookId" readonly>
+                </div>
+                <div class="input-group">
+                    <label for="">Book Title</label>
+                    <input type="text" id="editBookTitle" placeholder="e.g Python">
+                </div>
+                <div class="input-group">
+                    <label for="">Book Author</label>
+                    <input type="text" id="editBookAuthor" placeholder="e.g Remo">
+                </div>
+                <div class="input-group" style="display: flex; gap: 20px;">
+                  <div style="width: 100%;">
+                     <label for="">Book Category</label>
+                    <select name="" id="editBookCategory" style="width: 100%;height: 40px;">
+                      <option value="tech">Tech</option>
+                      <option value="science">Science</option>
+                      <option value="programming">Programming</option>
+                      <option value="history">History</option>
+                      <option value="physics">Physics</option>
+                       
+                    </select>
+                  </div>
+                   <div style="width: 100%;">
+                     <label for="">Book Quantity</label>
+                    <input type="text" placeholder="e.g 2" id="editBookQuantity" style="width: 100%;">
+                       
+                  
+                  </div>
+                  <div>
+
+                  </div>
+                   
+                </div>
+                <div class="input-group" style="display: flex;gap: 20px; justify-content: space-between;">
+                  <div style="width: 100%;">
+                    <label for="">Publisher</label>
+                    <input type="text" name="" id="editBookPublisher" placeholder="e.g Martin">
+                  </div>
+                   <div style="width: 100%;">
+                    <label for="">Year</label>
+                    <input type="text" name="" id="editBookYear" placeholder="e.g 1965">
+                  </div>
+                </div>
+                <div class="btn-group">
+                    <button class="cancel-btn" onclick="editOverlay()">Cancel</button>
+                    <button class="save-btn" onclick="editBook()">Edit</button>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <!-- -------------- -->
+
+     
     </main>
 
-    <script src="../js/sidebar.js" ></script>
-    <script src="../js/dashboard.js" ></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/dashboard.js"></script>
     <script src="../js/books.js" defer></script>
-</body>
+  </body>
 </html>

@@ -112,3 +112,63 @@
   background-color: var(--main-color);
   color: white;
 }
+.editOverlay{
+  display: none;
+    justify-content: center;
+  align-items: center;
+}
+
+/* .modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    width: 400px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 10px;
+}
+
+.modal-box input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px;
+    margin: 8px 0;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-box button {
+    padding: 10px 15px;
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+} */
+ .book-container{
+ 
+  
+ }
+.book-container table tbody tr td{
+    padding: 8px 5px;
+    border-bottom: 1px solid gray;
+}

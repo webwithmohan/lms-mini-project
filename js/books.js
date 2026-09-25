@@ -1,390 +1,53 @@
-// const book = [
-//   {
-//     id: 1,
-//     title: "The Great Gatsby",
-//     author: "F. Scott Fitzgerald",
-//     category: "Fiction",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg",
-//   },
-//   {
-//     id: 2,
-//     title: "To Kill a Mockingbird",
-//     author: "Harper Lee",
-//     category: "Fiction",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg",
-//   },
-//   {
-//     id: 3,
-//     title: "1984",
-//     author: "George Orwell",
-//     category: "Fiction",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
-//   },
-//   {
-//     id: 4,
-//     title: "Pride and Prejudice",
-//     author: "Jane Austen",
-//     category: "Romance",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
-//   },
-//   {
-//     id: 5,
-//     title: "Jane Eyre",
-//     author: "Charlotte Bronte",
-//     category: "Romance",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780141441146-L.jpg",
-//   },
-//   {
-//     id: 6,
-//     title: "Wuthering Heights",
-//     author: "Emily Bronte",
-//     category: "Romance",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780141439556-L.jpg",
-//   },
-//   {
-//     id: 7,
-//     title: "The Hobbit",
-//     author: "J.R.R. Tolkien",
-//     category: "Fantasy",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg",
-//   },
-//   {
-//     id: 8,
-//     title: "The Fellowship of the Ring",
-//     author: "J.R.R. Tolkien",
-//     category: "Fantasy",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780261103573-L.jpg",
-//   },
-//   {
-//     id: 9,
-//     title: "The Two Towers",
-//     author: "J.R.R. Tolkien",
-//     category: "Fantasy",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780261102361-L.jpg",
-//   },
-//   {
-//     id: 10,
-//     title: "The Return of the King",
-//     author: "J.R.R. Tolkien",
-//     category: "Fantasy",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780261102378-L.jpg",
-//   },
-//   {
-//     id: 11,
-//     title: "Harry Potter and the Philosopher's Stone",
-//     author: "J.K. Rowling",
-//     category: "Fantasy",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780590353427-L.jpg",
-//   },
-//   {
-//     id: 12,
-//     title: "Harry Potter and the Chamber of Secrets",
-//     author: "J.K. Rowling",
-//     category: "Fantasy",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780439064866-L.jpg",
-//   },
-//   {
-//     id: 13,
-//     title: "Harry Potter and the Prisoner of Azkaban",
-//     author: "J.K. Rowling",
-//     category: "Fantasy",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780439136365-L.jpg",
-//   },
-//   {
-//     id: 14,
-//     title: "Harry Potter and the Goblet of Fire",
-//     author: "J.K. Rowling",
-//     category: "Fantasy",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780439139601-L.jpg",
-//   },
-//   {
-//     id: 15,
-//     title: "The Alchemist",
-//     author: "Paulo Coelho",
-//     category: "Self Help",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780062315007-L.jpg",
-//   },
-//   {
-//     id: 16,
-//     title: "Atomic Habits",
-//     author: "James Clear",
-//     category: "Self Help",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
-//   },
-//   {
-//     id: 17,
-//     title: "The 7 Habits of Highly Effective People",
-//     author: "Stephen R. Covey",
-//     category: "Self Help",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9781982137274-L.jpg",
-//   },
-//   {
-//     id: 18,
-//     title: "How to Win Friends and Influence People",
-//     author: "Dale Carnegie",
-//     category: "Self Help",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780671027032-L.jpg",
-//   },
-//   {
-//     id: 19,
-//     title: "Think and Grow Rich",
-//     author: "Napoleon Hill",
-//     category: "Self Help",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9781585424337-L.jpg",
-//   },
-//   {
-//     id: 20,
-//     title: "Rich Dad Poor Dad",
-//     author: "Robert T. Kiyosaki",
-//     category: "Finance",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9781612681139-L.jpg",
-//   },
-//   {
-//     id: 21,
-//     title: "The Intelligent Investor",
-//     author: "Benjamin Graham",
-//     category: "Finance",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780060555665-L.jpg",
-//   },
-//   {
-//     id: 22,
-//     title: "A Random Walk Down Wall Street",
-//     author: "Burton G. Malkiel",
-//     category: "Finance",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780393358384-L.jpg",
-//   },
-//   {
-//     id: 23,
-//     title: "The Psychology of Money",
-//     author: "Morgan Housel",
-//     category: "Finance",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780857197689-L.jpg",
-//   },
-//   {
-//     id: 24,
-//     title: "The Little Book of Common Sense Investing",
-//     author: "John C. Bogle",
-//     category: "Finance",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9781119404507-L.jpg",
-//   },
-//   {
-//     id: 25,
-//     title: "Sapiens",
-//     author: "Yuval Noah Harari",
-//     category: "History",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg",
-//   },
-//   {
-//     id: 26,
-//     title: "Guns, Germs, and Steel",
-//     author: "Jared Diamond",
-//     category: "History",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780393317558-L.jpg",
-//   },
-//   {
-//     id: 27,
-//     title: "A People's History of the United States",
-//     author: "Howard Zinn",
-//     category: "History",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780060838652-L.jpg",
-//   },
-//   {
-//     id: 28,
-//     title: "The Silk Roads",
-//     author: "Peter Frankopan",
-//     category: "History",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9781101912379-L.jpg",
-//   },
-//   {
-//     id: 29,
-//     title: "The Diary of a Young Girl",
-//     author: "Anne Frank",
-//     category: "History",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780553296983-L.jpg",
-//   },
-//   {
-//     id: 30,
-//     title: "A Brief History of Time",
-//     author: "Stephen Hawking",
-//     category: "Science",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg",
-//   },
-//   {
-//     id: 31,
-//     title: "Cosmos",
-//     author: "Carl Sagan",
-//     category: "Science",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780345539434-L.jpg",
-//   },
-//   {
-//     id: 32,
-//     title: "The Selfish Gene",
-//     author: "Richard Dawkins",
-//     category: "Science",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780198788607-L.jpg",
-//   },
-//   {
-//     id: 33,
-//     title: "Astrophysics for People in a Hurry",
-//     author: "Neil deGrasse Tyson",
-//     category: "Science",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780393609394-L.jpg",
-//   },
-//   {
-//     id: 34,
-//     title: "The Origin of Species",
-//     author: "Charles Darwin",
-//     category: "Science",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780451529060-L.jpg",
-//   },
-//   {
-//     id: 35,
-//     title: "Clean Code",
-//     author: "Robert C. Martin",
-//     category: "Programming",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg",
-//   },
-//   {
-//     id: 36,
-//     title: "The Pragmatic Programmer",
-//     author: "David Thomas and Andrew Hunt",
-//     category: "Programming",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg",
-//   },
-//   {
-//     id: 37,
-//     title: "JavaScript: The Good Parts",
-//     author: "Douglas Crockford",
-//     category: "Programming",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780596517748-L.jpg",
-//   },
-//   {
-//     id: 38,
-//     title: "You Don't Know JS",
-//     author: "Kyle Simpson",
-//     category: "Programming",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9781491904244-L.jpg",
-//   },
-//   {
-//     id: 39,
-//     title: "Eloquent JavaScript",
-//     author: "Marijn Haverbeke",
-//     category: "Programming",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9781593279509-L.jpg",
-//   },
-//   {
-//     id: 40,
-//     title: "The Lean Startup",
-//     author: "Eric Ries",
-//     category: "Business",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780307887894-L.jpg",
-//   },
-//   {
-//     id: 41,
-//     title: "Zero to One",
-//     author: "Peter Thiel",
-//     category: "Business",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780804139298-L.jpg",
-//   },
-//   {
-//     id: 42,
-//     title: "Good to Great",
-//     author: "Jim Collins",
-//     category: "Business",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780066620992-L.jpg",
-//   },
-//   {
-//     id: 43,
-//     title: "The 4-Hour Workweek",
-//     author: "Timothy Ferriss",
-//     category: "Business",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780307465351-L.jpg",
-//   },
-//   {
-//     id: 44,
-//     title: "Start with Why",
-//     author: "Simon Sinek",
-//     category: "Business",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9781591846444-L.jpg",
-//   },
-//   {
-//     id: 45,
-//     title: "The Fault in Our Stars",
-//     author: "John Green",
-//     category: "Romance",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780062024039-L.jpg",
-//   },
-//   {
-//     id: 46,
-//     title: "Me Before You",
-//     author: "Jojo Moyes",
-//     category: "Romance",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780143124542-L.jpg",
-//   },
-//   {
-//     id: 47,
-//     title: "The Notebook",
-//     author: "Nicholas Sparks",
-//     category: "Romance",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780446694853-L.jpg",
-//   },
-//   {
-//     id: 48,
-//     title: "The Hunger Games",
-//     author: "Suzanne Collins",
-//     category: "Adventure",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780439023481-L.jpg",
-//   },
-//   {
-//     id: 49,
-//     title: "The Maze Runner",
-//     author: "James Dashner",
-//     category: "Adventure",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780385737944-L.jpg",
-//   },
-//   {
-//     id: 50,
-//     title: "Life of Pi",
-//     author: "Yann Martel",
-//     category: "Adventure",
-//     imageUrl: "https://covers.openlibrary.org/b/isbn/9780156027328-L.jpg",
-//   },
-// ];
-// localStorage.setItem("books", JSON.stringify(book));
-let books = JSON.parse(localStorage.getItem("books")) || [];
 
+let books = JSON.parse(localStorage.getItem("books")) || []
+  
 
 const link = document.querySelector(".category-link");
 
 //get Uniq Category Item
 
-  const categorySet = new Set();
-  books.forEach((book) => {
-    categorySet.add(book.category);
-  });
-  let categories = [...categorySet];
-  console.log(categories);
+// const categorySet = new Set();
+// books.forEach((book) => {
+//   categorySet.add(book.category);
+// });
+// let categories = [...categorySet];
+// console.log(categories);
+let categories = ["Tech", "Science", "History", "Programming", "Physics"];
 
-  categories.forEach((book) => {
-    link.innerHTML += `<li data-category="${book}">${book}</li>`;
-  });
+categories.forEach((book) => {
+  link.innerHTML += `<li data-category="${book}">${book}</li>`;
+});
 
+//Render Category in addBook
+
+
+let bookCategory = document.getElementById("bookCategory");
+categories.forEach((book) => {
+  bookCategory.innerHTML += `<option value=${book}>${book}</option>`;
+});
 
 //render all books;
 
-let bookContainer = document.querySelector(".book-container");
+
+let bookContainer = document.querySelector(".book-container table tbody");
 books.forEach((book) => {
-  bookContainer.innerHTML += `<div class="book">
-  <img src="${book.imageUrl}"></img>
-  <p>Title :${book.title}</p>
-  <p>Author:${book.author}</p>
-  <p>Category:${book.category}</p>
-  <div style="display:flex;justify-content:end; margin-top:20px;gap:5px;">
-  <button class="edit-btn" style="padding:5px 10px;background-color:var(--main-color); color:white;border:none;outline:none">Edit</button>
-  <button class="delete-btn" style="padding:5px 10px;background-color:rgb(216, 44, 44); color:white;border:none;outline:none" onClick="deleteBook(${book.id})">Delete</button>
-  </div>
-  </div>`;
+bookContainer.innerHTML += `<tr>
+                <td>${book.bookId}</td>
+                <td>${book.bookTitle}</td>
+                <td>${book.bookAuthor}</td>
+                <td>${book.bookCategory}</td>
+                <td>${book.bookQuantity}</td>
+                
+                <td>
+                  <button onclick="openEditPopup('${book.bookId}')">Edit</button>
+                  <button onclick="deleteBook('${book.bookId}')">Delete</button>
+                  
+                </td>
+              </tr>`
+ 
 });
+
+
 
 //display Books
 function displayBooks(cat) {
@@ -392,35 +55,49 @@ function displayBooks(cat) {
   // console.log(filter);
 
   if (cat != "all") {
+    let books=JSON.parse(localStorage.getItem('books')) || []
     let filteredBooks = books.filter(
-      (book) => book.category.toLowerCase().replace(" ", "") === cat,
+      (book) => book.bookCategory.toLowerCase().replace(" ", "") === cat,
     );
 
     bookContainer.innerHTML = "";
 
     filteredBooks.map((book) => {
-      bookContainer.innerHTML += `<div class="book">
-      <img src="${book.imageUrl}"></img>
-      <p>Title :${book.title}</p>
-      <p>Author:${book.author}</p>
-      <p>Category:${book.category}</p>
-       <div style="display:flex;justify-content:end; margin-top:20px;gap:5px;">
-  <button class="edit-btn" style="padding:5px 10px;background-color:var(--main-color); color:white;border:none;outline:none">Edit</button>
-  <button class="delete-btn" style="padding:5px 10px;background-color:rgb(216, 44, 44); color:white;border:none;outline:none" onClick="deleteBook(${book.id})">Delete</button>
-      </div>`;
+      bookContainer.innerHTML += `<tr>
+                <td>${book.bookId}</td>
+                <td>${book.bookTitle}</td>
+                <td>${book.bookAuthor}</td>
+                <td>${book.bookCategory}</td>
+                <td>${book.bookQuantity}</td>
+                <td>5</td>
+                <td>
+                  <button class="editBtn" onclick="openEditPopup('${book.bookId}')">Edit</button>
+                  <button class="deleteBtn" onclick="deleteBook('${book.bookId}')">Delete</button>
+                  
+                </td>
+              </tr>`
+ 
+     
     });
   } else {
     bookContainer.innerHTML = "";
+    let books=JSON.parse(localStorage.getItem("books")) || []
     books.map((book) => {
-      bookContainer.innerHTML += `<div class="book">
-      <img src="${book.imageUrl}"></img>
-      <p>Title :${book.title}</p>
-      <p>Author:${book.author}</p>
-      <p>Category:${book.category}</p>
-       <div style="display:flex;justify-content:end; margin-top:20px;gap:5px;">
-  <button class="edit-btn" style="padding:5px 10px;background-color:var(--main-color); color:white;border:none;outline:none">Edit</button>
-  <button class="delete-btn" style="padding:5px 10px;background-color:rgb(216, 44, 44); color:white;border:none;outline:none" onClick="deleteBook(${book.id})">Delete</button>
-      </div>`;
+      bookContainer.innerHTML += `<tr>
+                <td>${book.bookId}</td>
+                <td>${book.bookTitle}</td>
+                <td>${book.bookAuthor}</td>
+                <td>${book.bookCategory}</td>
+                <td>${book.bookQuantity}</td>
+                <td>5</td>
+                <td>
+                  <button onclick="openEditPopup('${book.bookId}')">Edit</button>
+                  <button onclick="deleteBook('${book.bookId}')">Delete</button>
+                  
+                </td>
+              </tr>`
+ 
+     
     });
   }
 }
@@ -439,31 +116,8 @@ list.forEach((val) => {
         setActiveItem(category);
         displayBooks(category);
         break;
-      case "fiction":
-        setActiveItem(category);
-        displayBooks(category);
-        break;
-      case "romance":
-        setActiveItem(category);
-        displayBooks(category);
-        break;
-      case "fantasy":
-        setActiveItem(category);
-        displayBooks(category);
-        break;
-      case "selfhelp":
-        setActiveItem(category);
-        displayBooks(category);
-        break;
-      case "finance":
-        setActiveItem(category);
-        displayBooks(category);
-        break;
-      case "history":
-        setActiveItem(category);
-        displayBooks(category);
-        break;
-      case "science":
+
+      case "physics":
         setActiveItem(category);
         displayBooks(category);
         break;
@@ -472,11 +126,15 @@ list.forEach((val) => {
         displayBooks(category);
         break;
         setActiveItem(category);
-      case "business":
+      case "history":
         setActiveItem(category);
         displayBooks(category);
         break;
-      case "adventure":
+      case "science":
+        setActiveItem(category);
+        displayBooks(category);
+        break;
+      case "tech":
         setActiveItem(category);
         displayBooks(category);
         break;
@@ -513,49 +171,138 @@ function closePopup() {
   let overlay = document.querySelector(".overlay");
   overlay.style.display = "none";
 }
+function editOverlay() {
+  let overlay = document.querySelector(".editOverlay");
+  overlay.style.display = "none";
+}
 
 //addBook Functionality
 
 function addBook() {
-  let id = document.getElementById("bookId").value;
-  let title = document.getElementById("bookTitle").value;
-  let author = document.getElementById("bookAuthor").value;
-  let category = document.getElementById("bookCategory").value;
-  let imageUrl = document.getElementById("bookImageUrl").value;
+  let bookId = document.getElementById("bookId").value;
+  let bookTitle = document.getElementById("bookTitle").value;
+  let bookAuthor = document.getElementById("bookAuthor").value;
+  let bookCategory = document.getElementById("bookCategory").value;
+  let bookQuantity = document.getElementById("bookQuantity").value;
+  let bookPublisher= document.getElementById("bookPublisher").value;
+  let bookYear = document.getElementById("bookYear").value;
 
-  if (title != "" && author != "" && category != "" && imageUrl != "") {
+  if (bookTitle === "" || bookAuthor ==="" || bookCategory === "" || bookQuantity === "" || bookPublisher ==="" || bookYear ==="") {
+    alert("Required All fields")
+    return
+  }else{
+    let books = JSON.parse(localStorage.getItem("books")) || [];
     const newBook = {
-      id: id,
-      title: title,
-      author: author,
-      category: category,
-      imageUrl: imageUrl,
-    };
-    books.push(newBook);
-    localStorage.setItem("books", JSON.stringify(books));
-    alert("Successfully Added Book");
-    let overlay = document.querySelector(".overlay");
-    overlay.style.display = "none";
-    loadLink();
-    displayBooks("all");
+    bookId: bookId,
+    bookTitle: bookTitle,
+    bookAuthor: bookAuthor,
+    bookCategory: bookCategory,
+    bookQuantity: bookQuantity,
+    bookPublisher: bookPublisher,
+    bookYear: bookYear,
+  };
 
-  } else {
-    alert("Required All Fields");
-  }
+  books.push(newBook);
+  localStorage.setItem("books", JSON.stringify(books));
+  alert("book Added Successfully");
+  document.querySelector('.overlay').style.display="none"
+  displayBooks("all");
+   
+  } 
 }
 
 //delete Book
 
 function deleteBook(id) {
-  let filterBook = books.filter((book) => Number(book.id) !== Number(id))
-  console.log(filterBook);
+  let books = JSON.parse(localStorage.getItem("books")) || [];
+  books = books.filter((book) => book.bookId !== id);
+  localStorage.setItem("books", JSON.stringify(books));
+  displayBooks("all");
+}
 
-  localStorage.setItem("books", JSON.stringify(filterBook))
+//Edit Book
+let overlay=document.getElementsByClassName('editOverlay')[0]
+function openEditPopup(id){
+  
+  overlay.style.display="flex"
+   let books = JSON.parse(localStorage.getItem("books")) || [];
+  let book = books.find((book) => book.bookId === id);
+  document.getElementById("editBookId").value = book.bookId;
+  document.getElementById("editBookTitle").value = book.bookTitle;
+  document.getElementById("editBookAuthor").value = book.bookAuthor;
+  // document.getElementById("editBookCategory").value = book.bookCategory;
+  document.getElementById("editBookQuantity").value = book.bookQuantity;
+  document.getElementById("editBookPublisher").value = book.bookPublisher;
+  document.getElementById("editBookYear").value = book.bookYear;
 
-  displayBooks("all")
+    let category = document.getElementById("editBookCategory");
+
+
+    let selectedCategory = book.bookCategory;
+
+
+    let options = [...category.options];
+
+
+    let selectedOption = options.find(
+        option => option.value === selectedCategory
+    );
+
+    if (selectedOption) {
+
+        category.value = selectedCategory;
+
+    } else {
+
+      
+        let option = document.createElement("option");
+
+        option.value = selectedCategory;
+        option.textContent = selectedCategory;
+
+        category.insertBefore(option, category.firstChild);
+
+        category.value = selectedCategory;
+    }
+
+    
+
  
+}
+
+function editBook(){
+   let books = JSON.parse(localStorage.getItem("books")) || [];
+  let id=document.getElementById("editBookId").value
+
+  let book=books.find(book => book.bookId === id);
+  book.bookId=document.getElementById("editBookId").value
+  book.bookTitle=document.getElementById("editBookTitle").value
+  book.bookAuthor=document.getElementById("editBookAuthor").value
+  book.bookCategory=document.getElementById("editBookCategory").value
+  book.bookQuantity=document.getElementById("editBookQuantity").value
+  book.bookPublisher=document.getElementById("editBookPublisher").value
+  book.bookYear=document.getElementById("editBookYear").value
+
+  localStorage.setItem("books",JSON.stringify(books));
+  alert("Edit Successfully")
+  displayBooks("all");
+  overlay.style.display="none"
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
