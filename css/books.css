@@ -172,3 +172,24 @@
     padding: 8px 5px;
     border-bottom: 1px solid gray;
 }
+.publisher{
+  color: rgb(145, 142, 142);
+}
+.editBtn{
+  background-color: var(--main-color);
+  padding: 3px 10px;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.deleteBtn{
+  background-color: rgb(192, 40, 40);
+  padding: 3px 10px;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-weight: bold;
+}

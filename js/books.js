@@ -33,14 +33,14 @@ let bookContainer = document.querySelector(".book-container table tbody");
 books.forEach((book) => {
 bookContainer.innerHTML += `<tr>
                 <td>${book.bookId}</td>
-                <td>${book.bookTitle}</td>
+                <td>${book.bookTitle}<br><span class="publisher">${book.bookPublisher}</span></td>
                 <td>${book.bookAuthor}</td>
                 <td>${book.bookCategory}</td>
                 <td>${book.bookQuantity}</td>
                 
                 <td>
-                  <button onclick="openEditPopup('${book.bookId}')">Edit</button>
-                  <button onclick="deleteBook('${book.bookId}')">Delete</button>
+                  <button onclick="openEditPopup('${book.bookId}')" class="editBtn">Edit</button>
+                  <button onclick="deleteBook('${book.bookId}')" class="deleteBtn">Delete</button>
                   
                 </td>
               </tr>`
@@ -85,14 +85,14 @@ function displayBooks(cat) {
     books.map((book) => {
       bookContainer.innerHTML += `<tr>
                 <td>${book.bookId}</td>
-                <td>${book.bookTitle}</td>
+                <td>${book.bookTitle}<br><span class="publisher">${book.bookPublisher}</span></td>
                 <td>${book.bookAuthor}</td>
                 <td>${book.bookCategory}</td>
                 <td>${book.bookQuantity}</td>
                 <td>5</td>
                 <td>
-                  <button onclick="openEditPopup('${book.bookId}')">Edit</button>
-                  <button onclick="deleteBook('${book.bookId}')">Delete</button>
+                  <button onclick="openEditPopup('${book.bookId}')" class="editBtn">Edit</button>
+                  <button onclick="deleteBook('${book.bookId}')" class="deleteBtn">Delete</button>
                   
                 </td>
               </tr>`
@@ -156,7 +156,7 @@ function setActiveItem(li) {
 
 //open AddBook Popup
 
-function openBookPopup() {
+ function openBookPopup() {
   let overlay = document.querySelector(".overlay");
   overlay.style.display = "flex";
   let id = document.getElementById("bookId");

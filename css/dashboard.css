@@ -140,8 +140,68 @@ main p{
     text-align: center;
 }
 .card-1{
-    background-color: rgb(200, 239, 200);
+    background-color:white;
+    box-shadow: 1px 1px 0cqmax 0px var(--main-color);
+    background-color: rgb(183, 212, 248);
+    transition: 0.2s ease-in;
     
+}
+.card-1:hover{
+    
+    box-shadow: 0px 0px 2px 2px rgb(165, 192, 224),
+    0px 0px 3px 3px rgb(124, 160, 204),
+    0px 0px 4px 4px rgb(68, 108, 156),
+    0px 0px 5px 5px rgb(15, 40, 71);
+    
+
+}
+.card-2{
+    background-color:white;
+    box-shadow: 1px 1px 0cqmax 0px var(--main-color);
+    background-color: rgb(183, 212, 248);
+    transition: 0.2s ease-in;
+    
+}
+.card-2:hover{
+    
+    box-shadow: 0px 0px 2px 2px rgb(245, 221, 243),
+    0px 0px 3px 3px rgb(233, 186, 229),
+    0px 0px 4px 4px rgb(211, 129, 204),
+    0px 0px 5px 5px rgb(187, 77, 178);
+    
+
+}
+.card-3{
+    background-color:white;
+    box-shadow: 1px 1px 0cqmax 0px var(--main-color);
+    background-color: rgb(183, 212, 248);
+    transition: 0.2s ease-in;
+    
+}
+.card-3:hover{
+    
+    box-shadow: 0px 0px 2px 2px rgb(226, 229, 250),
+    0px 0px 3px 3px rgb(193, 199, 238),
+    0px 0px 4px 4px rgb(137, 147, 207),
+    0px 0px 5px 5px rgb(108, 122, 212);
+    
+
+}
+.card-4{
+    background-color:white;
+    box-shadow: 1px 1px 0cqmax 0px var(--main-color);
+    background-color: rgb(183, 212, 248);
+    transition: 0.2s ease-in;
+    
+}
+.card-4:hover{
+    
+    box-shadow: 0px 0px 2px 2px rgb(248, 232, 233),
+    0px 0px 3px 3px rgb(236, 201, 203),
+    0px 0px 4px 4px rgb(197, 136, 140),
+    0px 0px 5px 5px rgb(206, 112, 118);
+    
+
 }
 .card-1 .icon-box{
     color: #105f26;
@@ -160,13 +220,13 @@ main p{
     
 }
 .card-2{
-    background-color: rgb(234, 187, 230);
+    background-color: rgb(245, 221, 243);
 }
 .card-3{
-    background-color: rgb(200, 205, 239);
+    background-color: rgb(226, 229, 250);
 }
 .card-4{
-    background-color: rgb(239, 200, 201);
+    background-color: rgb(248, 232, 233);
 }
 .quick{
     background-color: #cfcbef;
@@ -218,10 +278,19 @@ main p{
     .cards{
         grid-template-columns: repeat(2,1fr);
     }
+      .cards .card{
+        display: flex;
+        flex-direction: column
+
+    }
+    .card h2{
+        font-size: 20px
+    }
 }
-@media(max-width:600px){
+@media(max-width:700px){
     .cards{
         grid-template-columns: repeat(1,1fr);
     }
+  
 }
 
