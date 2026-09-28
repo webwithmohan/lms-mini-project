@@ -1,6 +1,7 @@
 let books = JSON.parse(localStorage.getItem("books")) || [];
 
 const link = document.querySelector(".category-link");
+console.log(link);
 
 //get Uniq Category Item
 
@@ -35,8 +36,12 @@ books.forEach((book) => {
                 <td>${book.bookQuantity}</td>
                 
                 <td>
-                  <button onclick="openEditPopup('${book.bookId}')" class="editBtn">Edit</button>
-                  <button onclick="deleteBook('${book.bookId}')" class="deleteBtn">Delete</button>
+                  <button onclick="openEditPopup('${book.bookId}')" class="editBtn"><span class=" edit-icon material-symbols-outlined">
+edit
+</span>Edit</button>
+                  <button onclick="deleteBook('${book.bookId}')" class="deleteBtn"><span class="delete-icon material-symbols-outlined">
+delete
+</span>Delete</button>
                   
                 </td>
               </tr>`;
@@ -64,8 +69,12 @@ function displayBooks(cat) {
                 <td>${book.bookQuantity}</td>
                 
                 <td>
-                  <button class="editBtn" onclick="openEditPopup('${book.bookId}')">Edit</button>
-                  <button class="deleteBtn" onclick="deleteBook('${book.bookId}')">Delete</button>
+                  <button class="editBtn" onclick="openEditPopup('${book.bookId}')"><span class=" edit-icon material-symbols-outlined">
+edit
+</span>Edit</button>
+                  <button class="deleteBtn" onclick="deleteBook('${book.bookId}')"><span class="delete-icon material-symbols-outlined">
+delete
+</span>Delete</button>
                   
                 </td>
               </tr>`;
@@ -80,10 +89,14 @@ function displayBooks(cat) {
                 <td>${book.bookAuthor}</td>
                 <td>${book.bookCategory}</td>
                 <td>${book.bookQuantity}</td>
-                <td>5</td>
+              
                 <td>
-                  <button onclick="openEditPopup('${book.bookId}')" class="editBtn">Edit</button>
-                  <button onclick="deleteBook('${book.bookId}')" class="deleteBtn">Delete</button>
+                  <button onclick="openEditPopup('${book.bookId}')" class="editBtn"><span class=" edit-icon material-symbols-outlined">
+edit
+</span>Edit</button>
+                  <button onclick="deleteBook('${book.bookId}')" class="deleteBtn"><span class="delete-icon material-symbols-outlined">
+delete
+</span>Delete</button>
                   
                 </td>
               </tr>`;
@@ -210,7 +223,6 @@ function addBook() {
       duration: 3000,
       gravity: "top",
       position: "center",
-      
     }).showToast();
 
     clear();
@@ -245,6 +257,18 @@ function deleteBook(id) {
       let books = JSON.parse(localStorage.getItem("books")) || [];
       books = books.filter((book) => book.bookId !== id);
       localStorage.setItem("books", JSON.stringify(books));
+      Toastify({
+      text: "Deleted Successfully !",
+      duration: 3000,
+      gravity: "top",
+      position: "right",
+      style:{
+        background:"red",
+        borderRadius:"10px"
+      },
+  
+
+    }).showToast();
       displayBooks("all");
     }
   });
@@ -302,7 +326,55 @@ function editBook() {
   book.bookYear = document.getElementById("editBookYear").value;
 
   localStorage.setItem("books", JSON.stringify(books));
-  alert("Edit Successfully");
+   Toastify({
+      text: "book Edited Successfully !",
+      duration: 3000,
+      gravity: "top",
+      position: "right",
+      style:{
+        background:"var(--main-color)",
+        borderRadius:"10px"
+      },
+  
+
+    }).showToast();
   displayBooks("all");
   overlay.style.display = "none";
 }
+
+//search Functionality
+let searchValue = document.getElementById("searchBook");
+function bookSearch(data) {
+  let bookContainer = document.querySelector(".book-container table tbody");
+  bookContainer.innerHTML = "";
+
+  data.map((book) => {
+    bookContainer.innerHTML += `<tr>
+                <td>${book.bookId}</td>
+                <td>${book.bookTitle}<br><span class="publisher">${book.bookPublisher}</span></td>
+                <td>${book.bookAuthor}</td>
+                <td>${book.bookCategory}</td>
+                <td>${book.bookQuantity}</td>
+              
+                <td>
+                  <button onclick="openEditPopup('${book.bookId}')" class="editBtn"><span class="edit-icon material-symbols-outlined">
+edit
+</span>Edit</button>
+                  <button onclick="deleteBook('${book.bookId}')" class="deleteBtn"><span class="delete-icon material-symbols-outlined">delete</span>Delete</button>
+                  
+                </td>
+              </tr>`;
+  });
+}
+
+document.getElementById("searchBook").addEventListener("input", function () {
+  let books = JSON.parse(localStorage.getItem("books")) || [];
+  let search = searchValue.value.toLowerCase().trim();
+
+  let filteredBooks = books.filter(
+    (book) =>
+      book.bookTitle.toLowerCase().includes(search) ||
+      book.bookAuthor.toLowerCase().includes(search),
+  );
+  bookSearch(filteredBooks);
+});

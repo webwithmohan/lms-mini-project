@@ -38,7 +38,7 @@
           </div>
           <div class="text-box">
             <h2>Available Books</h2>
-            <h2>15</h2>
+            <h2 id="available-books">15</h2>
           </div>
         </div>
         <div class="card card-3">
@@ -47,16 +47,16 @@
           </div>
           <div class="text-box">
             <h2>Issued Books</h2>
-            <h2>20</h2>
+            <h2 id="issued-books">20</h2>
           </div>
         </div>
         <div class="card card-4">
           <div class="icon-box">
-            <span class="material-symbols-outlined"> auto_stories </span>
+            <span class="material-symbols-outlined"> assignment_late </span>
           </div>
           <div class="text-box">
-            <h2>Books Stocks</h2>
-            <h2>20</h2>
+            <h2>Over Due</h2>
+            <h2 id="stock-books">20</h2>
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@
           <h2 style="display: inline">Quick Actions</h2>
         </div>
         <div class="action-group">
-          <button onclick="openBookPopup()">Add Book</button>
+          <div class="action">Add Book</div>
           <div class="action">Return Book</div>
           <div class="action">Issue Book</div>
           <div class="action">Retun Book</div>
@@ -136,12 +136,12 @@
         </div>
       </div>
     </main>
-     
-  <script src="../js/dashboard.js" defer></script>
+
     <script src="../js/sidebar.js" defer></script>
-  
+    <script src="../js/dashboard.js" defer></script>
+
     <script src="../js/books.js" defer></script>
     <!-- <script src="../popup/addbook/popup.js"></script> -->
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

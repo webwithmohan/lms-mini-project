@@ -164,10 +164,10 @@ main p{
 }
 .card-2:hover{
     
-    box-shadow: 0px 0px 2px 2px rgb(245, 221, 243),
-    0px 0px 3px 3px rgb(233, 186, 229),
-    0px 0px 4px 4px rgb(211, 129, 204),
-    0px 0px 5px 5px rgb(187, 77, 178);
+    box-shadow: 0px 0px 2px 2px rgb(109, 194, 110),
+    0px 0px 3px 3px rgb(136, 239, 137),
+    0px 0px 4px 4px rgb(136, 239, 137),
+    0px 0px 5px 5px rgb(53, 115, 54);
     
 
 }
@@ -180,26 +180,26 @@ main p{
 }
 .card-3:hover{
     
-    box-shadow: 0px 0px 2px 2px rgb(226, 229, 250),
-    0px 0px 3px 3px rgb(193, 199, 238),
-    0px 0px 4px 4px rgb(137, 147, 207),
-    0px 0px 5px 5px rgb(108, 122, 212);
+    box-shadow: 0px 0px 2px 2px rgb(223, 215, 176),
+    0px 0px 3px 3px rgb(197, 188, 148),
+    0px 0px 4px 4px rgb(244, 230, 168),
+    0px 0px 5px 5px rgb(244, 230, 168);
     
 
 }
 .card-4{
     background-color:white;
     box-shadow: 1px 1px 0cqmax 0px var(--main-color);
-    background-color: rgb(183, 212, 248);
+    background-color: rgb(211, 51, 19);
     transition: 0.2s ease-in;
     
 }
 .card-4:hover{
     
-    box-shadow: 0px 0px 2px 2px rgb(248, 232, 233),
-    0px 0px 3px 3px rgb(236, 201, 203),
-    0px 0px 4px 4px rgb(197, 136, 140),
-    0px 0px 5px 5px rgb(206, 112, 118);
+    box-shadow: 0px 0px 2px 2px rgb(230, 178, 181),
+    0px 0px 3px 3px rgb(198, 117, 122),
+    0px 0px 4px 4px rgb(133, 60, 65),
+    0px 0px 5px 5px rgb(102, 26, 31);
     
 
 }
@@ -220,13 +220,13 @@ main p{
     
 }
 .card-2{
-    background-color: rgb(245, 221, 243);
+    background-color: rgb(136, 239, 137);
 }
 .card-3{
-    background-color: rgb(226, 229, 250);
+    background-color: rgb(244, 230, 168);
 }
 .card-4{
-    background-color: rgb(248, 232, 233);
+    background-color: rgb(246, 159, 165);
 }
 .quick{
     background-color: #cfcbef;
@@ -284,7 +284,7 @@ main p{
 
     }
     .card h2{
-        font-size: 20px
+        font-size: 15px
     }
 }
 @media(max-width:700px){
