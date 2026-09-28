@@ -127,12 +127,22 @@ function checkForm() {
 
     
     localStorage.setItem("users", JSON.stringify(users));
-    let timer = setTimeout(slow, 3000);
-    let popup = document.getElementsByClassName("overlay")[0];
-    popup.style.display = "block";
-    function slow() {
-      window.location.href = "login.html";
-      clearTimeout(timer);
-    }
+    // let timer = setTimeout(slow, 3000);
+    // let popup = document.getElementsByClassName("overlay")[0];
+    // popup.style.display = "block";
+    // function slow() {
+    //   window.location.href = "login.html";
+    //   clearTimeout(timer);
+    // }
+    
+
+    //
+    Swal.fire({
+      icon:"success",
+      title:"Register Success",
+      text:"Account Created Successfully ! You can Login"
+    }).then((result) => {
+      window.location.href="login.html"
+    })
   }
 }

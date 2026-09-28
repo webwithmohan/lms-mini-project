@@ -97,15 +97,30 @@ document.addEventListener("sidebarloaded", () => {
 
             if (path == "logout") {
                 let cPage=location.pathname.split("/").pop();
-                let con = confirm("Are you sure to logout")
-                if (con) {
-                    localStorage.removeItem("currentuser");
-                    localStorage.setItem("isLoggedIn", false);
-                    window.location.href = "login.html";
-                } else {
-                    window.location.href = cPage
+                // let con = confirm("Are you sure to logout")
+                // if (con) {
+                //     localStorage.removeItem("currentuser");
+                //     localStorage.setItem("isLoggedIn", false);
+                //     window.location.href = "login.html";
+                // } else {
+                //     window.location.href = cPage
 
-                }
+                // }
+                Swal.fire({
+                    icon:"warning",
+                    title:"Are you Sure to Logout",
+                    showCancelButton:true,
+
+                    
+                    
+
+
+                }).then((result) => {
+                    if(result.isConfirmed){
+                        window.location.href="login.html"
+
+                    }
+                })
                 
 
             } else {
