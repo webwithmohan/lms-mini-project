@@ -33,7 +33,7 @@ books.forEach((book) => {
                 <td>${book.bookTitle}<br><span class="publisher">${book.bookPublisher}</span></td>
                 <td>${book.bookAuthor}</td>
                 <td>${book.bookCategory}</td>
-                <td>${book.bookQuantity}</td>
+                <td>${book.bookQuantity && Number(book.bookQuantity) > 0 ?book.bookQuantity : `<span style="color:red";>Out of Stock</span>`}</td>
                 
                 <td>
                   <button onclick="openEditPopup('${book.bookId}')" class="editBtn"><span class=" edit-icon material-symbols-outlined">
@@ -88,7 +88,7 @@ delete
                 <td>${book.bookTitle}<br><span class="publisher">${book.bookPublisher}</span></td>
                 <td>${book.bookAuthor}</td>
                 <td>${book.bookCategory}</td>
-                <td>${book.bookQuantity}</td>
+                 <td>${book.bookQuantity && Number(book.bookQuantity) > 0 ?book.bookQuantity : `<span style="color:red";>Out of Stock</span>`}</td>
               
                 <td>
                   <button onclick="openEditPopup('${book.bookId}')" class="editBtn"><span class=" edit-icon material-symbols-outlined">
@@ -159,14 +159,17 @@ function setActiveItem(li) {
 //open AddBook Popup
 
 function openBookPopup() {
-  let b = JSON.parse(localStorage.getItem("books"));
+  let b = JSON.parse(localStorage.getItem("books"))
   let overlay = document.querySelector(".overlay");
   overlay.style.display = "flex";
   let id = document.getElementById("bookId");
-  let length = b.length;
-  console.log(length);
+  if(b != undefined){
+    id.value=b.length + 1
 
-  id.value = length + 1;
+  }else{
+    id.value=1
+  }
+ 
 }
 
 //close popup
@@ -354,7 +357,7 @@ function bookSearch(data) {
                 <td>${book.bookTitle}<br><span class="publisher">${book.bookPublisher}</span></td>
                 <td>${book.bookAuthor}</td>
                 <td>${book.bookCategory}</td>
-                <td>${book.bookQuantity}</td>
+                <td>${book.bookQuantity && Number(book.bookQuantity) > 0 ?book.bookQuantity : `<span style="color:red";>Out of Stock</span>`}</td>
               
                 <td>
                   <button onclick="openEditPopup('${book.bookId}')" class="editBtn"><span class="edit-icon material-symbols-outlined">

@@ -1,78 +1,190 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Issue Book</title>
-    <link rel="stylesheet" href="../css/dashboard.css" />
-    <link rel="stylesheet" href="../css/variable.css" />
-    <link rel="stylesheet" href="../css/issue.css">
-  </head>
-  <body>
-    <aside></aside>
 
-    <!--Main Content-->
-    <main>
-      <h1>Issue Book</h1>
-      <div class="issue-book-container" style="display: flex">
-        <div class="left-issue" style="width: 50%;border: 2px solid rgb(215, 213, 213); border-radius: 8px;">
-          <div class="container" >
-            <div class="text" style="border-bottom: 2px solid rgb(198, 195, 195); background-color: rgb(219, 217, 217); padding: 10px;">
-              <h2 style=>Issue Book Container</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Issue Book</title>
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link rel="stylesheet" href="../css/variable.css" />
+  <link rel="stylesheet" href="../css/issue.css">
+</head>
+
+<body>
+  <aside></aside>
+
+  <!--Main Content-->
+  <main>
+    <h1>Issue Book</h1>
+    <div class="issue-book-container" style="display: flex">
+      <div class="left-issue" style="width: 50%;border: 2px solid rgb(215, 213, 213); border-radius: 8px;">
+        <div class="container">
+          <div class="text"
+            style="border-bottom: 2px solid rgb(198, 195, 195); background-color: rgb(219, 217, 217); padding: 10px;">
+            <h2 style=>Issue Book Container</h2>
+          </div>
+          <div class="section" style="padding: 10px;">
+            <div class="input-group">
+              <label for="">Select Member <span>*</span></label><br />
+              <select name="" id="memberSelect">
+                <option value="">....Select Member....</option>
+              </select>
             </div>
-            <div class="section" style="padding: 10px;">
-              <div class="input-group">
-                <label for="">Select Member <span>*</span></label
-                ><br />
-                <select name="" id="member-select">
-                  <option value="">....Select Member....</option>
-                </select>
+            <div class="input-group">
+              <label for="">Select Book <span>*</span></label><br />
+              <select name="" id="bookSelect">
+                <option value="">Select Book...</option>
+              </select>
+            </div>
+            <div class="input-group" style="display: flex; justify-content: space-between; gap: 10px;">
+              <div class="date" style="flex-grow: 1;">
+                <label for="">Issue Date <span>*</span></label><br />
+                <input type="date" id="issueDate" />
               </div>
-              <div class="input-group">
-                <label for="">Select Book <span>*</span></label
-                ><br />
-                <select name="" id="book-select">
-                  <option value="">Select Book...</option>
-                </select>
-              </div>
-              <div class="input-group" style="display: flex; justify-content: space-between; gap: 10px;">
-                <div class="date" style="flex-grow: 1;">
-                  <label for="">Issue Date <span>*</span></label
-                  ><br />
-                  <input type="date" />
-                </div>
-                <div class="due" style="flex-grow: 1;">
-                  <label for="">Return / Due Date <span>*</span></label
-                  ><br />
-                  <input type="date" />
-                </div>
-              </div>
-              <div class="btn-group">
-                <button style="flex-grow: 4 ;background-color: var(--main-color);color: white;">Issue Book Now</button>
-                <button style="flex-grow: 2;">Clear</button>
+              <div class="due" style="flex-grow: 1;">
+                <label for="">Return / Due Date <span>*</span></label><br />
+                <input type="date" id="dueDate" />
               </div>
             </div>
-          </div>
-        </div>
-        <div class="right-issue" style="margin-left: 30px; border: 2px solid rgb(212, 209, 209); border-radius: 10px">
-          <div class="right-text" style="background-color: rgb(210, 208, 208); padding: 10px 5px; border-radius: 8px;">
-            <h2>Issue Workflow Architecture</h2>
-
-          </div>
-          <div class="right-content" style="padding: 10px;">
-            <ol style="list-style: none;" class="avail-list">
-              <li>Availability Check</li>
-              <li>Stock Management</li>
-              <li>Transaction logging</li>
-            </ol>
-
+            <div class="btn-group">
+              <button style="flex-grow: 4 ;background-color: var(--main-color);color: white;" id="issueBtn">Issue Book
+                Now</button>
+              <button style="flex-grow: 2;">Clear</button>
+            </div>
           </div>
         </div>
       </div>
-    </main>
+      <div class="right-issue" style="margin-left: 30px; border: 2px solid rgb(212, 209, 209); border-radius: 10px">
+        <div class="right-text" style="background-color: rgb(210, 208, 208); padding: 10px 5px; border-radius: 8px;">
+          <h2>Issue Workflow Architecture</h2>
 
-    <script src="../js/sidebar.js"></script>
-    <script src="../js/dashboard.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  </body>
+        </div>
+        <div class="right-content" style="padding: 10px;">
+          <ol style="list-style: none;" class="avail-list">
+            <li>Availability Check</li>
+            <li>Stock Management</li>
+            <li>Transaction logging</li>
+          </ol>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+
+    // Declare the variable whatever we will use the document
+    let memberSelect = document.getElementById('memberSelect')
+    let bookSelect = document.getElementById('bookSelect')
+    let issueDate = document.getElementById('issueDate')
+    let dueDate = document.getElementById('dueDate')
+    let issueBtn = document.getElementById('issueBtn')
+
+    //get the member and books list in the local Storage
+
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    let books = JSON.parse(localStorage.getItem('books')) || [];
+    users.forEach((user) => {
+      let element = document.createElement('option')
+      element.value = user.username
+      element.textContent = user.username;
+      memberSelect.appendChild(element)
+    })
+
+    //Books Render
+    function renderBook() {
+      let filteredBooks = books.filter((book) => book.bookQuantity > 0)
+      filteredBooks.forEach((book) => {
+        let element = document.createElement('option')
+        element.value = book.bookId
+        element.textContent = book.bookTitle;
+        bookSelect.appendChild(element)
+      })
+    }
+    renderBook()
+
+    //Issue Date Validation
+    const date = new Date();
+    issueDate.value = date.toISOString().split('T')[0]
+
+    //Due Date
+    const dDate = new Date();
+    dDate.setMonth(dDate.getMonth() + 1)
+    dueDate.value = dDate.toISOString().split('T')[0]
+
+
+
+
+
+    // localStorage.removeItem('books')
+
+    issueBtn.addEventListener('click', function (event) {
+      event.preventDefault();
+      let issueDate = document.getElementById('issueDate')
+      let dueDate = document.getElementById('dueDate')
+
+
+      if (memberSelect.value == "" || bookSelect.value == "") {
+        Swal.fire({
+          icon: "warning",
+          title: "Please Select all Fields"
+        })
+        return
+      } else if (new Date(dueDate.value) <= new Date(issueDate.value)) {
+        Swal.fire({
+          icon: "info",
+          title: "Invalid Date Choose"
+        })
+
+
+        return
+
+
+      }
+      else {
+        let issueBooks = JSON.parse(localStorage.getItem('issuebooks')) || [];
+        const selectedBook = books.find(book => book.bookId === bookSelect.value)
+        const newIssue = {
+          bookId: selectedBook.bookId,
+          issueMember: memberSelect.value,
+          issueBook: selectedBook.bookTitle,
+          issueDate: issueDate.value,
+          dueDate: dueDate.value
+        }
+        issueBooks.push(newIssue)
+        localStorage.setItem("issuebooks", JSON.stringify(issueBooks))
+        Swal.fire({
+          icon: "success",
+          title: "Book Issue Successfully"
+        })
+        updateQuantity(selectedBook.bookId);
+
+
+      }
+      function updateQuantity(uid) {
+        const updateBook = books.find(book => book.bookId === uid);
+        updateBook.bookQuantity = Number(updateBook.bookQuantity) - 1;
+        localStorage.setItem('books', JSON.stringify(books))
+        renderBook()
+
+
+
+      }
+
+
+
+
+
+
+    })
+
+    // localStorage.removeItem('issuebooks')
+
+  </script>
+
+</body>
+
 </html>
