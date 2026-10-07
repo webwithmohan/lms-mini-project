@@ -106,7 +106,7 @@ function checkForm() {
    
     let users=JSON.parse(localStorage.getItem('users')) || []
     let memberid;
-    if(users.length === 0){
+    if(users.length === 0 ){
       memberid="MEM-101"
     }else{
       let lastMember=users[users.length-1]
