@@ -103,46 +103,48 @@ function checkForm() {
   }
 
   if (valid) {
-    let newUser = 
-      {
-        username: username.value.trim(),
-        email: email.value.trim(),
-        phone: phone.value.trim(),
-        address: address.value,
-        password: password.value.trim(),
-      };
-      let users=JSON.parse(localStorage.getItem("users")) || [];
-      const emailExist=users.some(user =>user.email===newUser.email );
-      if(emailExist){
-        emailError.textContent="Email Already Exist"
-        email.style.color="red"
-        return;
-      }
+   
+    let users=JSON.parse(localStorage.getItem('users')) || []
+    let memberid;
+    if(users.length === 0){
+      memberid="MEM-101"
+    }else{
+      let lastMember=users[users.length-1]
+      let lastId=parseInt(lastMember.memberId.split('-')[1])
+      memberid=`MEM-${lastId + 1 }`
+    }
+   
+  
+   
 
-      //new user
-      users.push(newUser)
-      
+    let newUser = {
+      memberId: memberid,
+      username: username.value.trim(),
+      email: email.value.trim(),
+      phone: phone.value.trim(),
+      address: address.value,
+      password: password.value.trim(),
+    };
 
-    
+    //new user
+    users.push(newUser);
 
-    
     localStorage.setItem("users", JSON.stringify(users));
-    // let timer = setTimeout(slow, 3000);
-    // let popup = document.getElementsByClassName("overlay")[0];
-    // popup.style.display = "block";
-    // function slow() {
-    //   window.location.href = "login.html";
-    //   clearTimeout(timer);
-    // }
     
-
-    //
     Swal.fire({
-      icon:"success",
-      title:"Register Success",
-      text:"Account Created Successfully ! You can Login"
+      icon: "success",
+      title: "Register Success",
+      text: "Account Created Successfully ! You can Login",
     }).then((result) => {
-      window.location.href="login.html"
-    })
+      window.location.href = "login.html";
+    });
   }
 }
+
+
+// localStorage.removeItem('users')
+
+
+
+
+

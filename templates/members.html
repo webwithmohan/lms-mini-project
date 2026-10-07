@@ -1,39 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Members</title>
-    <link rel="stylesheet" href="../css/dashboard.css">
-    <link rel="stylesheet" href="../css/variable.css">
-    <link rel="stylesheet" href="../css/member.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/variable.css" />
+    <link rel="stylesheet" href="../css/member.css" />
+  </head>
+  <body>
     <aside></aside>
 
     <!--Main Content-->
     <main>
-        <h1 style="display: flex;align-items: center;">Members<span class="material-symbols-outlined" style="font-size: 40px; text-align: center;align-content: center; margin-left: 20px;">
-groups
-</span></h1>
-        <p id="total-users"></p>
-        <table border="1">
-            <thead>
-                <tr><th>USER NAME</th>
-                    <th>EMAIL</th>
-                    <th>ADDRESS</th>
-                    <th>PHONE</th>
-                    <th>ACTION</th>
-                </tr>
-            </thead>
+      <h1 style="display: flex; align-items: center">
+        Members<span
+          class="material-symbols-outlined"
+          style="
+            font-size: 40px;
+            text-align: center;
+            align-content: center;
+            margin-left: 20px;
+          "
+        >
+          groups
+        </span>
+      </h1>
+      <p id="total-users"></p>
 
-        </table>
-        
+      <div class="member-container">
+        <div class="search-container">
+          <table border="1">
+            <thead>
+              <tr>
+                <th>MEMBER ID</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>MOBILE</th>
+                <th>ACTION</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
     </main>
 
     <script src="../js/sidebar.js"></script>
     <script src="../js/dashboard.js"></script>
     <script src="../js/member.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
 </html>
