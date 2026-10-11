@@ -266,12 +266,9 @@ main p{
     border-bottom: 5px solid white;
 
 }
-#status-text{
-    border:1px solid #105f26;
-    color: #105f26;
-    background-color: #80df9b;
+.issue{
+    color: green;
     
-    border-radius: 8px;
 
 }
 @media(max-width:1000px){

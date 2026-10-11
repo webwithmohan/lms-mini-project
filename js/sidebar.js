@@ -1,3 +1,4 @@
+
 fetch("sidebar.html")
 .then((response) => response.text())
 .then((data) =>{
@@ -19,6 +20,8 @@ fetch("sidebar.html")
 }).catch((err) => {
     console.log(err)
 })
+let issue=JSON.parse(localStorage.getItem("issuebooks")) || []
+  document.getElementById('issued-books').textContent=issue.length;
 
 
 

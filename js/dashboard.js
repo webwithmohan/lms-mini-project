@@ -1,5 +1,7 @@
 document.addEventListener("sidebarloaded", () => {
   let currentUser = JSON.parse(localStorage.getItem("currentuser"));
+  
+  
   console.log(currentUser);
 
   let user = document.querySelector(".profile p .user");
@@ -44,3 +46,23 @@ document.addEventListener("sidebarloaded", () => {
     });
   });
 });
+
+
+//recent History Manage
+let recents=JSON.parse(localStorage.getItem('recenthistory')) || []
+let recent=recents.slice(-5).reverse();
+let tables=document.querySelector('.recent-issue-box table tbody')
+tables.innerHTML="";
+recent.forEach((r) => {
+  tables.innerHTML +=` <tr>
+              <th>${r.recentId}</th>
+              <th>${r.issueMember}</th>
+              <th>${r.issueBook}</th>
+              <th>${r.issueDate}</th>
+              <th>${r.dueDate}</th>
+              <th class="issue">${r.status}</th>
+            </tr>`
+
+
+})
+
