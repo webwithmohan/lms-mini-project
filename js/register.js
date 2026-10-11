@@ -34,6 +34,8 @@ let phoneError = document.getElementById("phone-error");
 let addressError = document.getElementById("address-error");
 let passwordError = document.getElementById("password-error");
 let confirmPasswordError = document.getElementById("confirm-password-error");
+let department=document.getElementById('department');
+
 
 function checkForm() {
   event.preventDefault();
@@ -79,6 +81,7 @@ function checkForm() {
   } else {
     addressError.textContent = "";
   }
+  
 
   // password validation
   if (password.value.trim() === "") {
@@ -121,6 +124,7 @@ function checkForm() {
       memberId: memberid,
       username: username.value.trim(),
       email: email.value.trim(),
+      department:document.getElementById('department').value,
       phone: phone.value.trim(),
       address: address.value,
       password: password.value.trim(),

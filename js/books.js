@@ -26,7 +26,7 @@ categories.forEach((book) => {
 
 //render all books;
 
-let bookContainer = document.querySelector(".book-container table tbody");
+let bookContainer = document.querySelector(".table-container table tbody");
 books.forEach((book) => {
   bookContainer.innerHTML += `<tr>
                 <td>${book.bookId}</td>
@@ -35,11 +35,11 @@ books.forEach((book) => {
                 <td>${book.bookCategory}</td>
                 <td>${book.bookQuantity && Number(book.bookQuantity) > 0 ?book.bookQuantity : `<span style="color:red";>Out of Stock</span>`}</td>
                 
-                <td>
-                  <button onclick="openEditPopup('${book.bookId}')" class="editBtn"><span class=" edit-icon material-symbols-outlined">
+                <td class="action-col">
+                  <button onclick="openEditPopup('${book.bookId}')" class="btn-edit btn"><span class=" edit-icon material-symbols-outlined">
 edit
 </span>Edit</button>
-                  <button onclick="deleteBook('${book.bookId}')" class="deleteBtn"><span class="delete-icon material-symbols-outlined">
+                  <button onclick="deleteBook('${book.bookId}')" class="btn-delete btn"><span class="delete-icon material-symbols-outlined">
 delete
 </span>Delete</button>
                   
@@ -69,10 +69,10 @@ function displayBooks(cat) {
                 <td>${book.bookQuantity}</td>
                 
                 <td>
-                  <button class="editBtn" onclick="openEditPopup('${book.bookId}')"><span class=" edit-icon material-symbols-outlined">
+                  <button class="btn-edit btn" onclick="openEditPopup('${book.bookId}')"><span class=" edit-icon material-symbols-outlined">
 edit
 </span>Edit</button>
-                  <button class="deleteBtn" onclick="deleteBook('${book.bookId}')"><span class="delete-icon material-symbols-outlined">
+                  <button class="btn-delete btn" onclick="deleteBook('${book.bookId}')"><span class="delete-icon material-symbols-outlined">
 delete
 </span>Delete</button>
                   
@@ -90,11 +90,11 @@ delete
                 <td>${book.bookCategory}</td>
                  <td>${book.bookQuantity && Number(book.bookQuantity) > 0 ?book.bookQuantity : `<span style="color:red";>Out of Stock</span>`}</td>
               
-                <td>
-                  <button onclick="openEditPopup('${book.bookId}')" class="editBtn"><span class=" edit-icon material-symbols-outlined">
+                <td >
+                  <button onclick="openEditPopup('${book.bookId}')" class="btn-edit btn"><span class=" edit-icon material-symbols-outlined">
 edit
 </span>Edit</button>
-                  <button onclick="deleteBook('${book.bookId}')" class="deleteBtn"><span class="delete-icon material-symbols-outlined">
+                  <button onclick="deleteBook('${book.bookId}')" class="btn-delete btn"><span class="delete-icon material-symbols-outlined">
 delete
 </span>Delete</button>
                   
@@ -348,7 +348,7 @@ function editBook() {
 //search Functionality
 let searchValue = document.getElementById("searchBook");
 function bookSearch(data) {
-  let bookContainer = document.querySelector(".book-container table tbody");
+  let bookContainer = document.querySelector(".table-container table tbody");
   bookContainer.innerHTML = "";
 
   data.map((book) => {
@@ -360,10 +360,10 @@ function bookSearch(data) {
                 <td>${book.bookQuantity && Number(book.bookQuantity) > 0 ?book.bookQuantity : `<span style="color:red";>Out of Stock</span>`}</td>
               
                 <td>
-                  <button onclick="openEditPopup('${book.bookId}')" class="editBtn"><span class="edit-icon material-symbols-outlined">
+                  <button onclick="openEditPopup('${book.bookId}')" class="btn-edit btn"><span class="edit-icon material-symbols-outlined">
 edit
 </span>Edit</button>
-                  <button onclick="deleteBook('${book.bookId}')" class="deleteBtn"><span class="delete-icon material-symbols-outlined">delete</span>Delete</button>
+                  <button onclick="deleteBook('${book.bookId}')" class="btn-delete btn"><span class="delete-icon material-symbols-outlined">delete</span>Delete</button>
                   
                 </td>
               </tr>`;
