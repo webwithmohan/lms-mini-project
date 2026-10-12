@@ -31,7 +31,7 @@ function loadIssue() {
         </td>
         <td>
          
-          <button class="btn return" onClick=returnBook('${issue.issueId}','${issue.bookId}')>Return</button>
+          <button class="btn return" onClick=returnBook('${issue.issueId}','${issue.bookId}','${issue.issueId}')>Return</button>
         </td>
       </tr>`;
   });
@@ -60,16 +60,43 @@ document.onload = loadIssue();
 // updateDueDate()
 
 //Return Book Management
-function returnBook(id, bookId) {
+function returnBook(id, bookId,issueId) {
+  let i=issuebooks.find(issue => issue.issueId == issueId)
   issuebooks = issuebooks.filter((issue) => issue.issueId !== id);
   localStorage.setItem("issuebooks", JSON.stringify(issuebooks));
   loadIssue();
+  recentHistory(i);
   updateBook(bookId);
+  
+  
+  
 }
 
 function updateBook(id) {
   const updateBook = books.find((book) => book.bookId === id);
   updateBook.bookQuantity = Number(updateBook.bookQuantity) + 1;
   localStorage.setItem("books", JSON.stringify(books));
+}
 
+//function recentHistory
+
+function recentHistory(id) {
+  const {}=id;
+  
+  let recent = JSON.parse(localStorage.getItem("recenthistory"))|| [];
+  let filterUser=issuebooks.find((f) =>  f.issueId == id)
+ 
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
 }
