@@ -196,12 +196,13 @@ function saveMember() {
 
 
     //Check All Field Are must be Not Empty
+    let currentMemberId = document.getElementById('memberId').value
     if (memberUsername == "" || memberEmail == "" || memberDepartment == "" || memberAddress == "" || memberPhone == "" || memberPassword == "" || confirmPassword == "") {
         alert("All Fields Are Required")
         return
     }
     //Check Email Already Exits
-    let emailExist = members.some(user => user.email == memberEmail)
+    let emailExist = members.some(user => user.email == memberEmail &&user.memberId !== currentMemberId)
 
 
     if (emailExist) {
