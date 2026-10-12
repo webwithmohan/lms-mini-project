@@ -268,8 +268,21 @@ main p{
 }
 .issue{
     color: green;
+    background-color: rgb(172, 230, 172);
+    padding: 3px 10px;
+    border-radius: 4px;
     
 
+}
+.return{
+    color: red;
+    background-color: rgb(226, 166, 166);
+    padding: 3px 10px;
+    border-radius: 4px;
+    
+}
+#myImage{
+    width: 100%;
 }
 @media(max-width:1000px){
     .cards{

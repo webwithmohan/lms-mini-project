@@ -154,4 +154,18 @@
         
     }
 
-    // localStorage.removeItem('issuebooks')
+    //Running Issue
+    let move=document.querySelector('.wrapper .card-track');
+    let issueRunningData=JSON.parse(localStorage.getItem('issuebooks')) || []
+    issueRunningData.forEach((data,index) => {
+      move.innerHTML +=`<div class="c c-${index+1}">
+      <p style="font-size:20px;font-weight:bold";>Name :${data.issueMember}</p>
+      <p>Book:${data.issueBook}</p>
+      <p>Issue Date:${data.issueDate}</p>
+      <p>Due Date:${data.dueDate}</p>
+      
+      </div>`
+
+    })
+    
+    

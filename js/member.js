@@ -92,6 +92,18 @@ function editMember() {
     localStorage.setItem('users', JSON.stringify(members))
     document.getElementsByClassName('overlay')[0].style.display = "none"
     loadMembersData();
+    Toastify({
+            text: "Edit Successfully !",
+            duration: 3000,
+            gravity: "top",
+            position: "center",
+            style: {
+                background: "var(--main-color)",
+                borderRadius: "10px"
+            },
+
+
+        }).showToast();
 
 
 

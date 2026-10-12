@@ -3,6 +3,9 @@
   margin: 0px;
   padding: 0px;
 }
+body{
+  overflow-x: hidden;
+}
 .input-group select,
 input {
   width: 100%;
@@ -37,4 +40,31 @@ input {
 .avail-list > li{
   margin-top: 20px;
 
+}
+.wrapper{
+  margin-top: 30px;
+  background-color:var(--main-color);
+  padding: 10px;
+}
+.card-track{
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollCards 20s linear infinite;
+}
+.c{
+  min-width: 220px;
+  padding: 25px;
+  background-color: white;
+ 
+  border-radius: 8px;
+  flex-shrink: 0;
+ 
+}
+@keyframes scrollCards{
+  from{
+    transform: translateX(0);
+  }to{
+    transform: translateX(-50%);
+  }
 }

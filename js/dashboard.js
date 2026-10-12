@@ -54,13 +54,14 @@ let recent=recents.slice(-5).reverse();
 let tables=document.querySelector('.recent-issue-box table tbody')
 tables.innerHTML="";
 recent.forEach((r) => {
+  let status=r.status=="Issue"?"issue":"return"
   tables.innerHTML +=` <tr>
               <th>${r.recentId}</th>
               <th>${r.issueMember}</th>
               <th>${r.issueBook}</th>
               <th>${r.issueDate}</th>
               <th>${r.dueDate}</th>
-              <th class="issue">${r.status}</th>
+              <th><span class="${status}">${r.status}</span></th>
             </tr>`
 
 
