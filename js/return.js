@@ -1,26 +1,21 @@
-
-
-let issuebooks = JSON.parse(localStorage.getItem('issuebooks')) || []
-let table = document.querySelector('.table-container .issue-table tbody')
-
-
-
+let issuebooks = JSON.parse(localStorage.getItem("issuebooks")) || [];
+let books = JSON.parse(localStorage.getItem("books")) || [];
+let table = document.querySelector(".table-container .issue-table tbody");
 
 function loadIssue() {
+  let table = document.querySelector(".table-container .issue-table tbody");
+  table.innerHTML = "";
+  issuebooks.forEach((issue) => {
+    let today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-    let table = document.querySelector('.table-container .issue-table tbody')
-    table.innerHTML=""
-    issuebooks.forEach((issue) => {
-        let today = new Date();
-        today.setHours(0, 0, 0, 0);
+    let dueDate = new Date(issue.dueDate);
+    dueDate.setHours(0, 0, 0, 0);
 
-        let dueDate = new Date(issue.dueDate);
-        dueDate.setHours(0, 0, 0, 0);
+    let statusText = dueDate < today ? "Overdue" : "Issued";
+    let statusClass = dueDate < today ? "overdue" : "issued";
 
-        let statusText = dueDate < today ? "Overdue" : "Issued";
-        let statusClass = dueDate < today ? "overdue" : "issued";
-
-        table.innerHTML += ` <tr>
+    table.innerHTML += ` <tr>
         <td>${issue.issueId}</td>
         <td>${issue.issueBook}
         <span style="display:block">Book Id :${issue.bookId}</span>
@@ -36,17 +31,12 @@ function loadIssue() {
         </td>
         <td>
          
-          <button class="btn return" onClick=returnBook('${issue.issueId}')>Return</button>
+          <button class="btn return" onClick=returnBook('${issue.issueId}','${issue.bookId}')>Return</button>
         </td>
-      </tr>`
-
-    })
-
-
-
+      </tr>`;
+  });
 }
 document.onload = loadIssue();
-
 
 // function updateDueDate() {
 
@@ -69,18 +59,17 @@ document.onload = loadIssue();
 // }
 // updateDueDate()
 
-
-
 //Return Book Management
-function returnBook(id){
-    issuebooks=issuebooks.filter(issue => issue.issueId !== id);
-    localStorage.setItem('issuebooks',JSON.stringify(issuebooks))
-    loadIssue()
-
-    
-    
-
-
+function returnBook(id, bookId) {
+  issuebooks = issuebooks.filter((issue) => issue.issueId !== id);
+  localStorage.setItem("issuebooks", JSON.stringify(issuebooks));
+  loadIssue();
+  updateBook(bookId);
 }
 
+function updateBook(id) {
+  const updateBook = books.find((book) => book.bookId === id);
+  updateBook.bookQuantity = Number(updateBook.bookQuantity) + 1;
+  localStorage.setItem("books", JSON.stringify(books));
 
+}

@@ -76,6 +76,8 @@
         }else{
             
             let id=(issueBooks[issueBooks.length -1].issueId).split('-')[1];
+            console.log(id);
+            
             let i=Number(id) + 1
             issueId=`ISS-${i}`
 
