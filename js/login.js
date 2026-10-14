@@ -33,7 +33,7 @@ function checkLoginDetails(event) {
     email.value = "";
     pass.value = "";
     localStorage.setItem("isLoggedIn", true);
-
+    localStorage.setItem('isAuthenticated',true)
     window.location.href = "dashboard.html";
   } else {
     error.textContent = "Invalid Username and Password";
@@ -46,3 +46,13 @@ let forgotBtn = document.getElementsByClassName("forgot-btn")[0];
 forgotBtn.addEventListener("click", function () {
   window.location.href = "forgot.html";
 });
+let bool=localStorage.getItem('isAuthenticated')
+if(bool === "true"){
+ 
+  
+   window.location.href = "dashboard.html";
+
+}
+     
+
+

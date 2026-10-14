@@ -1,22 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reports</title>
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/variable.css">
+    <link rel="stylesheet" href="../css/reports.css">
 </head>
+
 <body>
     <aside></aside>
 
     <!--Main Content-->
     <main>
         <h1>Report</h1>
+        <div class="top">
+            <div class="c c-1">
+                <p style="text-align: center;">TOTAL DISTINCT TITLE</p>
+                <div style="display: flex;justify-content: space-around;">
+                    <h2 id="bookTitle">5</h2>
+                    <span>O</span>
+                </div>
+            </div>
+            <div class="c c-2">
+                <p style="text-align: center;">AVAILABLE COPIES IN STOCK</p>
+                <div style="display: flex;justify-content: space-around;">
+                    <h2 id="booksStocks">10</h2>
+                    <span>O</span>
+                </div>
+
+            </div>
+            <div class="c c-3">
+                <p style="text-align: center;">ACTIVE ISSUED BOOKS</p>
+                <div style="display: flex;justify-content: space-around;">
+                    <h2 id="issueBooks">15</h2>
+                    <span>O</span>
+                </div>
+
+            </div>
+            <div class="c c-4">
+                <p style="text-align: center;">TOTAL REGISTER MEMBERS</p>
+                <div style="display: flex;justify-content: space-around;">
+                    <h2 id="registerMembers">6</h2>
+                    <span>O</span>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="left-content">
+                <h2 class="section-title">
+                    Category-wise Count
+                </h2>
+
+                <div id="categoryContainer"></div>
+
+            </div>
+            <div class="right-content">
+                d
+
+            </div>
+        </div>
     </main>
 
     <script src="../js/sidebar.js"></script>
+    <script src="../js/reports.js"></script>
     <script src="../js/dashboard.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+
 </html>

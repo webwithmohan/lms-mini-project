@@ -190,7 +190,7 @@ main p{
 .card-4{
     background-color:white;
     box-shadow: 1px 1px 0cqmax 0px var(--main-color);
-    background-color: rgb(211, 51, 19);
+    background-color: rgb(224, 222, 97);
     transition: 0.2s ease-in;
     
 }
@@ -226,7 +226,7 @@ main p{
     background-color: rgb(244, 230, 168);
 }
 .card-4{
-    background-color: rgb(246, 159, 165);
+    background-color: rgb(195, 140, 218);
 }
 .quick{
     background-color: #cfcbef;

@@ -37,6 +37,7 @@ document.addEventListener("sidebarloaded", () => {
           showCancelButton: true,
         }).then((result) => {
           if (result.isConfirmed) {
+            localStorage.setItem('isAuthenticated',false)
             window.location.href = "login.html";
           }
         });
@@ -66,4 +67,7 @@ recent.forEach((r) => {
 
 
 })
+
+let memberss=JSON.parse(localStorage.getItem('users')) || []
+document.getElementById('members').textContent=memberss.length
 

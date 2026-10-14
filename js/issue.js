@@ -7,6 +7,8 @@
 
     //get the member and books list in the local Storage
 
+    
+
     let users = JSON.parse(localStorage.getItem('users')) || [];
     let books = JSON.parse(localStorage.getItem('books')) || [];
     users.forEach((user) => {
@@ -102,6 +104,7 @@
           title: "Book Issue Successfully"
         })
         updateQuantity(selectedBook.bookId);
+        clearBtns()
 
 
       }
@@ -167,5 +170,19 @@
       </div>`
 
     })
+
+    //clearBtn
+
+    let clearBtn=document.getElementById('clearBtn');
+    clearBtn.addEventListener('click',clearBtns)
+
+    function clearBtns(){
+     
+      document.getElementById('memberSelect').value=""
+      document.getElementById('bookSelect').value=""
+    }
+
+    //////
+    
     
     
